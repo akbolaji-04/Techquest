@@ -327,7 +327,7 @@ margin-bottom: 1.5rem;
 }
 .highlight-card{
   background-image: linear-gradient(to right, #ffffff , #AA22AA );
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 .highlight-card .card-content {
