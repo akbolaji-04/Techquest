@@ -19,7 +19,7 @@ function nextSlide() {
 }
 
 // Auto-advance slides every 5 seconds
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 2000);
 
 // Firebase Google Sign-In function
 window.googleSignIn = function googleSignIn() {
