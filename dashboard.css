@@ -1,0 +1,477 @@
+
+/*For laptop screen*/
+@media (min-width: 600px) {
+    /* Reset some defaults */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+        } /* Closing brace for the media query */
+    
+
+    /* Body */
+    body {
+      font-family: 'Crimson Text', serif;
+      background-color: #f3f3f3;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6f009e; /* Purple */
+      color: #fff;
+      padding: 0.5rem 1rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-btn img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Main Container */
+    .dashboard-container {
+      max-width: 600px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+
+    #welcome-text {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #6f009e;
+    }
+
+    /* Quick Links Buttons */
+    .quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    }
+    .quick-link-btn {
+      background-color: #6f009e;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.6rem;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .quick-link-btn img{
+      width: 15px;
+      height: 15px;
+      object-fit: contain;
+    }
+
+    .quick-link-btn:hover {
+      background-color: #500076;
+    }
+    .highlight-card{
+      background-image: linear-gradient(to right, #ffffff , #6f009e );
+    }
+
+    .highlight-card .card-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .highlight-card .highlight-image {
+      width: 100px; /* Adjust the size as needed */
+      height: auto;
+      margin-right: 1rem;
+    }
+
+    .highlight-card .highlight-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .highlight-card h3 {
+      color: #6f009e;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-card p {
+      font-size: 0.875rem; /* Smaller text size */
+      color: #333;
+      margin-bottom: 1rem; /* Add margin to separate from button */
+    }
+
+    .start-btn {
+      background-color: #6f009e;
+      color: #fff;
+      border: none;
+      width: 150px;
+      border-radius: 20px; /* Rounded rectangle shape */
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .start-btn:hover {
+      background-color: #500076;
+    }
+
+    /* Progress Section */
+    .progress-section {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    .progress-section h3 {
+      color: #6f009e;
+      margin-bottom: 1rem;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 10px;
+      background-color: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #6f009e;
+      width: 0%; /* Updated dynamically */
+      transition: width 0.3s ease;
+    }
+
+    #progress-percentage {
+      display: block;
+      text-align: right;
+      margin-top: 0.5rem;
+      color: #333;
+    }
+
+
+    /* Features Section */
+    .features-section {
+      text-align: center;
+    }
+
+    .features-section h3 {
+      color: #6f009e;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card-container {
+      display: flex;
+      justify-content: center; /* Center the items horizontally */
+      align-items: center; /* Center the items vertically */
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      padding-bottom: 10px;
+      white-space: nowrap;
+      height: 100%; /* Ensure the container takes full height */
+    }
+
+    .feature-card-container::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for cleaner look */
+    }
+
+    .feature-card {
+      flex: 0 0 auto;
+      width: 45%; /* Adjust as needed to fit two cards per view */
+      height: 300px;
+      scroll-snap-align: start;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+    }
+    p{
+      font-size: 12px;
+    }
+
+    .feature-card img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card h4 {
+      margin-bottom: 0.5rem;
+      color: #6f009e;
+      font-size: 1.1rem;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    /* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Crimson Text', serif;
+  background-color: #f3f3f3;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #AA22AA; /* Purple */
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Main Container */
+.dashboard-container {
+  max-width: 600px;
+  margin: 1rem;
+  padding: 0 1rem;
+}
+
+#welcome-text {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #AA22AA;
+}
+
+/* Quick Links Buttons */
+.quick-links {
+display: flex;
+justify-content: center;
+gap: 1rem;
+margin-bottom: 1.5rem;
+}
+.quick-link-btn {
+  background-color: #AA22AA;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.quick-link-btn img{
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.quick-link-btn:hover {
+  background-color: #AA22AA;
+}
+.highlight-card{
+  background-image: linear-gradient(to right, #ffffff , #AA22AA );
+}
+
+.highlight-card .card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.highlight-card .highlight-image {
+  width: 80px; /* Adjust the size as needed */
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.highlight-card .highlight-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-card h3 {
+  color: #AA22AA;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-card p {
+  font-size: 0.8rem; /* Smaller text size */
+  color: #333;
+  margin-bottom: 1rem; /* Add margin to separate from button */
+}
+
+.start-btn {
+  background-color: #AA22AA;
+  color: #fff;
+  border: none;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px; /* Rounded rectangle shape */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.start-btn:hover {
+  background-color: #500076;
+}
+
+/* Progress Section */
+.progress-section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.progress-section h3 {
+  color: #AA22AA;
+  margin-bottom: 1rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #AA22AA;
+  width: 0%; /* Updated dynamically */
+  transition: width 0.3s ease;
+}
+
+#progress-percentage {
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+
+/* Features Section */
+.features-section {
+  text-align: center;
+}
+
+.features-section h3 {
+  color: #AA22AA;
+  margin-bottom: 1rem;
+}
+
+.feature-card-container {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  height: 100%; /* Ensure the container takes full height */
+}
+
+.feature-card-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for cleaner look */
+}
+
+.feature-card {
+  flex: 0 0 auto;
+  width: 50%;
+  height: 150px;
+  scroll-snap-align: start;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+p{
+  font-size: 12px;
+}
+
+.feature-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card h4 {
+  margin-bottom: 0.5rem;
+  color: #AA22AA;
+  font-size: 1.1rem;
+}
+}
