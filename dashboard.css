@@ -242,7 +242,7 @@
 
 
 /* For mobile screens */
-@media (max-width: 420px) {
+@media (max-width: 600px) {
   /* Reset some defaults */
   * {
     margin: 0;
@@ -253,7 +253,7 @@
   /* Body */
   body {
     font-family: 'Crimson Text', serif;
-    background-color: #fff;
+    background-color: #AA22AA;
     width: 100%; /* Change width to 100% */
     color: #333;
     min-height: 100vh;
