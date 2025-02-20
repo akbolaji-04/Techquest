@@ -238,240 +238,252 @@
 }
 
 
+
+
+/* For mobile screens */
 @media (max-width: 600px) {
+  /* Reset some defaults */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    /* Reset some defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  /* Body */
+  body {
+    font-family: 'Crimson Text', serif;
+    background-color: #fff;
+    width: 100%; /* Change width to 100% */
+    color: #333;
+    min-height: 100vh;
+  }
 
-/* Body */
-body {
-  font-family: 'Crimson Text', serif;
-  background-color: #f3f3f3;
-  color: #333;
-  min-height: 100vh;
-}
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #AA22AA; /* Purple */
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #AA22AA; /* Purple */
-  color: #fff;
-  padding: 0.5rem 1rem;
-}
+  .logo {
+    font-size: 2rem;
+  }
 
-.logo {
-  font-size: 2rem;
-}
+  .nav-right {
+    display: flex;
+    gap: 1rem;
+  }
 
-.nav-right {
-  display: flex;
-  gap: 1rem;
-}
+  .nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-.nav-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+  .nav-btn img {
+    width: 24px;
+    height: 24px;
+  }
 
-.nav-btn img {
-  width: 24px;
-  height: 24px;
-}
+  /* Main Container */
+  .dashboard-container {
+    margin: 0; /* Remove margin */
+    padding: 0 1rem;
+    width: 100%; /* Ensure it takes full width */
+  }
 
-/* Main Container */
-.dashboard-container {
-  margin: 1rem;
-  padding: 0 1rem;
-}
+  #welcome-text {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #AA22AA;
+  }
 
-#welcome-text {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #AA22AA;
-}
+  /* Quick Links Buttons */
+  .quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
 
-/* Quick Links Buttons */
-.quick-links {
-display: flex;
-justify-content: center;
-gap: 1rem;
-margin-bottom: 1.5rem;
-}
-.quick-link-btn {
-  background-color: #AA22AA;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.6rem;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.quick-link-btn img{
-  width: 15px;
-  height: 15px;
-  object-fit: contain;
-}
+  .quick-link-btn {
+    background-color: #AA22AA;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-.quick-link-btn:hover {
-  background-color: #AA22AA;
-}
-.highlight-card{
-  background-image: linear-gradient(to right, #ffffff , #AA22AA );
-    border-radius: 10px;
-}
+  .quick-link-btn img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+  }
 
-.highlight-card .card-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+  .quick-link-btn:hover {
+    background-color: #500076;
+  }
 
-.highlight-card .highlight-image {
-  width: 100px; /* Adjust the size as needed */
-  height: auto;
-  margin-right: 0.5rem;
-}
+  .highlight-card {
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    height: 300px;
+    background-image: linear-gradient(to right, #ffffff , #AA22AA );
+  }
 
-.highlight-card .highlight-text {
-  display: flex;
-  flex-direction: column;
-}
+  .highlight-card .card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
-.highlight-card h3 {
-  color: #AA22AA;
-  margin-bottom: 0.5rem;
-}
+  .highlight-card .highlight-image {
+    width: 80px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 0.5rem;
+  }
 
-.highlight-card p {
-  font-size: 0.8rem; /* Smaller text size */
-  color: #333;
-  margin-bottom: 1rem; /* Add margin to separate from button */
-}
+  .highlight-card .highlight-text {
+    display: flex;
+    flex-direction: column;
+  }
 
-.start-btn {
-  background-color: #AA22AA;
-  color: #fff;
-  border: none;
-  width: 100px;
-  height: 30px;
-  border-radius: 20px; /* Rounded rectangle shape */
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 0.7rem;
-  text-align: center;
-}
+  .highlight-card h3 {
+    color: #AA22AA;
+    margin-bottom: 0.5rem;
+  }
 
-.start-btn:hover {
-  background-color: #500076;
-}
+  .highlight-card p {
+    font-size: 0.8rem; /* Smaller text size */
+    color: #333;
+    margin-bottom: 1rem; /* Add margin to separate from button */
+  }
 
-/* Progress Section */
-.progress-section {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
-}
+  .start-btn {
+    background-color: #AA22AA;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px; /* Rounded rectangle shape */
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.7rem;
+    text-align: center;
+  }
 
-.progress-section h3 {
-  color: #AA22AA;
-  margin-bottom: 1rem;
-}
+  .start-btn:hover {
+    background-color: #500076;
+  }
 
-.progress-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
+  /* Progress Section */
+  .progress-section {
+    background-color: #fff;
+    height: 150px;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+  }
 
-.progress-bar-container {
-  width: 100%;
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-}
+  .progress-section h3 {
+    color: #AA22AA;
+    margin-bottom: 1rem;
+  }
 
-.progress-bar {
-  height: 100%;
-  background-color: #AA22AA;
-  width: 0%; /* Updated dynamically */
-  transition: width 0.3s ease;
-}
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
 
-#progress-percentage {
-  display: block;
-  text-align: right;
-  margin-top: 0.5rem;
-  color: #333;
-}
+  .progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
 
+  .progress-bar {
+    height: 100%;
+    background-color: #AA22AA;
+    width: 0%; /* Updated dynamically */
+    transition: width 0.3s ease;
+  }
 
-/* Features Section */
-.features-section {
-  text-align: center;
-}
+  #progress-percentage {
+    display: block;
+    text-align: right;
+    margin-top: 0.5rem;
+    color: #333;
+  }
 
-.features-section h3 {
-  color: #AA22AA;
-  margin-bottom: 1rem;
-}
+  /* Features Section */
+  .features-section {
+    text-align: center;
+  }
 
-.feature-card-container {
-  display: flex;
-  justify-content: center; /* Center the items horizontally */
-  align-items: center; /* Center the items vertically */
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 10px;
-  padding-bottom: 10px;
-  white-space: nowrap;
-  height: 100%; /* Ensure the container takes full height */
-}
+  .features-section h3 {
+    color: #AA22AA;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 
-.feature-card-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for cleaner look */
-}
+  .feature-card-container {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    height: 100%; /* Ensure the container takes full height */
+  }
 
-.feature-card {
-  flex: 0 0 auto;
-  width: 50%;
-  height: 150px;
-  scroll-snap-align: start;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-}
-p{
-  font-size: 12px;
-}
+  .feature-card-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for cleaner look */
+  }
 
-.feature-card img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.5rem;
-}
+  .feature-card {
+    flex: 0 0 auto;
+    width: 50%;
+    height: 200px;
+    scroll-snap-align: start;
+    background-color: #F7F7F7;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+  }
 
-.feature-card h4 {
-  margin-bottom: 0.5rem;
-  color: #AA22AA;
-  font-size: 1.1rem;
-}
+  p {
+    font-size: 12px;
+  }
+
+  .feature-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card h4 {
+    margin-bottom: 0.5rem;
+    color: #AA22AA;
+    font-size: 1.1rem;
+  }
 }
