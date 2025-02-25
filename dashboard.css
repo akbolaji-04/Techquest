@@ -288,10 +288,10 @@
 
   /* Main Container */
   .dashboard-container {
-    margin: 0 auto;         /* Center container if desired */
+    margin: 0 auto;        
     padding: 0 1rem;
-    width: 100%;            /* Full width on mobile */
-    max-width: 600px;       /* Optional: keep a max-width if you want */
+    width: 100%;            
+    max-width: 600px;       
   }
 
   #welcome-text {

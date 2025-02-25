@@ -25,6 +25,7 @@ body {
   color: #fff;
   padding: 0.5rem 1rem;
 }
+
 .logo {
   font-size: 2rem;
 }
@@ -34,15 +35,10 @@ body {
   gap: 1rem;
 }
 
-.nav-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-btn img {
-  width: 24px;
-  height: 24px;
+.nav-right img {
+  width: 24px; /* Set the width of the images */
+  height: 24px; /* Set the height of the images */
+  object-fit: contain; /* Ensure the images maintain their aspect ratio */
 }
 /* Lesson Container */
 .lesson-container {
