@@ -1,6 +1,6 @@
 
 /*For laptop screen*/
-@media (min-width: 600px) {
+@media (min-width: 768px) {
     /* Reset some defaults */
     * {
       margin: 0;
@@ -241,7 +241,7 @@
 
 
 /* For mobile screens */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   /* Reset some defaults */
   * {
     margin: 0;
@@ -252,6 +252,7 @@
   /* Body */
   body {
     font-family: 'Crimson Text', serif;
+      background-color: #000000;
     width: 80%; 
     color: #333;
     min-height: 100vh;
