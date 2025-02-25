@@ -1,117 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width= 300px, initial-scale=1.0">
-    <link rel="stylesheet" href="fundamentals.css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet" />
-    <title>Fundamentals of Computer</title>
-    <script defer src="fundamentals.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fundamentals of Computer</title>
+  <!-- Google Fonts: Crimson Text -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="fundamentals.css" />
+  <!-- External JS -->
+  <script defer src="fundamentals.js"></script>
 </head>
 <body>
-    <!-- Top Navigation Bar -->
+  <!-- Top Navigation Bar -->
   <nav class="top-nav">
     <div class="nav-left">
-      <h2 class="brand">TechQuest</h2>
+      <h2 class="logo">Tech Quest</h2>
     </div>
     <div class="nav-right">
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="#">Profile</a>
+      <a href="dashboard.html"><img src="assests/Home icon.png" alt="Home icon"></a>
+      <a href="#"><img src="assests/Profile Icon.png" alt="User Icon"></a>
     </div>
   </nav>
 
   <!-- Main Lesson Container -->
   <div class="lesson-container">
-    <!-- Lesson Header: Title & Progress Bar -->
+    <!-- Header with Lesson Title and Overall Progress -->
     <header class="lesson-header">
       <h1>Fundamentals of Computer</h1>
       <div class="progress-overview">
         <div class="progress-bar">
-          <div class="progress" id="lesson-progress" style="width: 0%;"></div>
+          <div class="progress" id="overall-progress" style="width: 0%;"></div>
         </div>
-        <p>Progress: <span id="progress-text">0</span>%</p>
+        <p>Overall Progress: <span id="overall-progress-text">0</span>%</p>
       </div>
     </header>
 
-    <!-- Lesson Navigation (Outline) -->
+    <!-- Lesson Outline Navigation -->
     <aside class="lesson-nav">
       <h3>Lesson Outline</h3>
-      <ul>
-        <li onclick="showSection('introduction')" class="active">Introduction</li>
-        <li onclick="showSection('types')">Types of Computers</li>
-        <li onclick="showSection('components')">Basic Components</li>
-        <li onclick="showSection('functions')">Computer Functions</li>
-        <li onclick="showSection('quiz')">Quiz</li>
-      </ul>
+      <ol id="outline-list">
+        <li data-outline="1" class="active">1. Introduction</li>
+        <li data-outline="2" class="locked">2. History &amp; Evolution</li>
+        <li data-outline="3" class="locked">3. Types of Computers</li>
+        <li data-outline="4" class="locked">4. Basic Components</li>
+        <li data-outline="5" class="locked">5. How Computers Work</li>
+        <li data-outline="6" class="locked">6. Software vs Hardware</li>
+        <li data-outline="7" class="locked">7. Modern Trends</li>
+        <li data-outline="8" class="locked">8. Final Quiz</li>
+      </ol>
     </aside>
 
-    <!-- Lesson Content Sections -->
+    <!-- Lesson Content Sections (Only one visible at a time) -->
     <main class="lesson-content">
-      <!-- Introduction Section -->
-      <section id="introduction" class="lesson-section">
-        <h2>Introduction</h2>
-        <img src="https://via.placeholder.com/480x270?text=Computer+Basics" alt="Computer Basics" />
-        <p>
-          A computer is an electronic device that processes, stores, and displays information. In this lesson, we begin with a brief history, the evolution of computers, and their significance in today’s world.
-        </p>
+      <!-- Outline 1: Introduction -->
+      <section id="outline-1" class="lesson-section">
+        <h2>1. Introduction</h2>
+        <p>Computers are electronic devices that process information. In this section, you learn the basics of what a computer is and its significance.</p>
+        <!-- Mini Test for Outline 1 -->
+        <div class="mini-test">
+          <p><strong>Mini Test:</strong> Which of the following best describes a computer?</p>
+          <label><input type="radio" name="q1" value="device"> An electronic device that processes data.</label><br>
+          <label><input type="radio" name="q1" value="toy"> A toy gadget for fun.</label><br>
+          <label><input type="radio" name="q1" value="book"> A manual for learning.</label><br>
+          <button class="test-btn" data-outline="1">Submit Answer</button>
+        </div>
       </section>
 
-      <!-- Types of Computers Section -->
-      <section id="types" class="lesson-section hidden">
-        <h2>Types of Computers</h2>
-        <img src="https://via.placeholder.com/480x270?text=Types+of+Computers" alt="Types of Computers" />
-        <p>
-          Computers come in various forms, from gigantic supercomputers to everyday desktops, laptops, tablets, and even smartphones. Each type is tailored for specific uses and performance levels.
-        </p>
+      <!-- Outline 2: History & Evolution -->
+      <section id="outline-2" class="lesson-section hidden">
+        <h2>2. History &amp; Evolution</h2>
+        <p>Learn how computers evolved from simple calculating machines to modern devices.</p>
+        <!-- Mini Test for Outline 2 -->
+        <div class="mini-test">
+          <p><strong>Mini Test:</strong> In which decade were the first electronic computers developed?</p>
+          <label><input type="radio" name="q2" value="1940s"> 1940s</label><br>
+          <label><input type="radio" name="q2" value="1960s"> 1960s</label><br>
+          <label><input type="radio" name="q2" value="1980s"> 1980s</label><br>
+          <button class="test-btn" data-outline="2">Submit Answer</button>
+        </div>
       </section>
 
-      <!-- Basic Components Section -->
-      <section id="components" class="lesson-section hidden">
-        <h2>Basic Components</h2>
-        <img src="https://via.placeholder.com/480x270?text=Computer+Components" alt="Computer Components" />
-        <p>
-          The essential parts of a computer include the Central Processing Unit (CPU), memory (RAM), storage devices, and input/output peripherals. These components work together to execute software and process data.
-        </p>
+      <!-- Outline 3: Types of Computers -->
+      <section id="outline-3" class="lesson-section hidden">
+        <h2>3. Types of Computers</h2>
+        <p>Explore different computer types from supercomputers to personal devices.</p>
+        <!-- Mini Test for Outline 3 -->
+        <div class="mini-test">
+          <p><strong>Mini Test:</strong> Which type of computer is designed for high-performance calculations?</p>
+          <label><input type="radio" name="q3" value="super"> Supercomputer</label><br>
+          <label><input type="radio" name="q3" value="laptop"> Laptop</label><br>
+          <label><input type="radio" name="q3" value="tablet"> Tablet</label><br>
+          <button class="test-btn" data-outline="3">Submit Answer</button>
+        </div>
       </section>
 
-      <!-- Computer Functions Section -->
-      <section id="functions" class="lesson-section hidden">
-        <h2>Computer Functions</h2>
-        <img src="https://via.placeholder.com/480x270?text=Computer+Functions" alt="Computer Functions" />
-        <p>
-          A computer's primary functions are input, processing, storage, and output. These functions enable computers to perform complex calculations, run applications, and communicate information efficiently.
-        </p>
+      <!-- Outline 4: Basic Components -->
+      <section id="outline-4" class="lesson-section hidden">
+        <h2>4. Basic Components</h2>
+        <p>Learn about the CPU, memory, storage, and other hardware components that make up a computer.</p>
+        <!-- Mini Test for Outline 4 -->
+        <div class="mini-test">
+          <p><strong>Mini Test:</strong> Which component is known as the brain of the computer?</p>
+          <label><input type="radio" name="q4" value="cpu"> CPU</label><br>
+          <label><input type="radio" name="q4" value="ram"> RAM</label><br>
+          <label><input type="radio" name="q4" value="motherboard"> Motherboard</label><br>
+          <button class="test-btn" data-outline="4">Submit Answer</button>
+        </div>
       </section>
 
-      <!-- Quiz Section -->
-      <section id="quiz" class="lesson-section hidden">
-        <h2>Interactive Quiz</h2>
-        <p>Test your knowledge with this fun quiz! Answer both questions to receive a surprise fun fact.</p>
-        <div class="quiz-container">
-          <!-- Quiz Question 1 -->  
-          <div class="quiz-question" data-index="0">
-            <p><strong>1.</strong> Which of the following is NOT a hardware component?</p>
-            <label><input type="radio" name="q1" value="cpu"> CPU</label><br>
-            <label><input type="radio" name="q1" value="ram"> RAM</label><br>
-            <label><input type="radio" name="q1" value="windows"> Windows</label><br>
-          </div>
-          <!-- Quiz Question 2 -->  
-          <div class="quiz-question" data-index="1">
-            <p><strong>2.</strong> What does CPU stand for?</p>
-            <label><input type="radio" name="q2" value="central_processing_unit"> Central Processing Unit</label><br>
-            <label><input type="radio" name="q2" value="computer_power_unit"> Computer Power Unit</label><br>
-            <label><input type="radio" name="q2" value="control_processing_unit"> Control Processing Unit</label><br>
-          </div>
-          <button id="check-quiz-btn">Check Answers</button>
-          <div id="quiz-feedback" class="quiz-feedback"></div>
+      <!-- Outline 5: How Computers Work -->
+      <section id="outline-5" class="lesson-section hidden">
+        <h2>5. How Computers Work</h2>
+        <p>Understand the four primary functions: input, processing, storage, and output.</p>
+        <!-- Mini Test for Outline 5 -->
+        <div class="mini-test">
+          <p><strong>Mini Test:</strong> What is the term for a computer receiving data?</p>
+          <label><input type="radio" name="q5" value="input"> Input</label><br>
+          <label><input type="radio" name="q5" value="processing"> Processing</label><br>
+          <label><input type="radio" name="q5" value="output"> Output</label><br>
+          <button class="test-btn" data-outline="5">Submit Answer</button>
+        </div>
+      </section>
+
+      <!-- Outline 6: Software vs Hardware -->
+      <section id="outline-6" class="lesson-section hidden">
+        <h2>6. Software vs Hardware</h2>
+        <p>Discover the difference between the physical components and the programs that run on them.</p>
+        <!-- Mini Test for Outline 6 -->
+        <div class="mini-test">
+          <p><strong>Mini Test:</strong> Which one is considered software?</p>
+          <label><input type="radio" name="q6" value="os"> Operating System</label><br>
+          <label><input type="radio" name="q6" value="cpu"> CPU</label><br>
+          <label><input type="radio" name="q6" value="keyboard"> Keyboard</label><br>
+          <button class="test-btn" data-outline="6">Submit Answer</button>
+        </div>
+      </section>
+
+      <!-- Outline 7: Modern Trends -->
+      <section id="outline-7" class="lesson-section hidden">
+        <h2>7. Modern Trends</h2>
+        <p>Examine current trends such as cloud computing, AI, and the Internet of Things.</p>
+        <!-- Mini Test for Outline 7 -->
+        <div class="mini-test">
+          <p><strong>Mini Test:</strong> Which trend refers to storing and accessing data over the Internet?</p>
+          <label><input type="radio" name="q7" value="cloud"> Cloud Computing</label><br>
+          <label><input type="radio" name="q7" value="desktop"> Desktop Computing</label><br>
+          <label><input type="radio" name="q7" value="analog"> Analog Processing</label><br>
+          <button class="test-btn" data-outline="7">Submit Answer</button>
+        </div>
+      </section>
+
+      <!-- Outline 8: Final Quiz -->
+      <section id="outline-8" class="lesson-section hidden">
+        <h2>8. Final Quiz</h2>
+        <p>This final mini test will review your overall understanding of the fundamentals.</p>
+        <!-- Mini Test for Outline 8 -->
+        <div class="mini-test">
+          <p><strong>Final Test:</strong> Which part of a computer processes instructions?</p>
+          <label><input type="radio" name="q8" value="cpu"> CPU</label><br>
+          <label><input type="radio" name="q8" value="ram"> RAM</label><br>
+          <label><input type="radio" name="q8" value="storage"> Storage</label><br>
+          <button class="test-btn" data-outline="8">Submit Answer</button>
         </div>
       </section>
     </main>
 
-    <!-- Lesson Footer: Navigation Buttons -->
+    <!-- Modal Popup for Quiz Feedback --> 
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <p id="modal-message"></p>
+        <button id="modal-close-btn">OK</button>
+      </div>
+    </div>
+
+    <!-- Lesson Footer -->
     <footer class="lesson-footer">
-      <button class="nav-btn" id="mark-complete-btn">Mark as Complete</button>
-      <div class="prev-next">\n        <button class="nav-btn">&larr; Previous Lesson</button>\n        <button class="nav-btn">Next Lesson &rarr;</button>\n      </div>\n    </footer>\n  </div>\n</body>\n</html>"
+      <button class="nav-btn" id="mark-complete-btn">Mark Lesson as Complete</button>
+      <div class="prev-next">
+        <button class="nav-btn">&larr; Previous Lesson</button>
+        <button class="nav-btn">Next Lesson &rarr;</button>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

@@ -21,19 +21,29 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #AA22AA;
-  padding: 0.5rem;
-}
-.top-nav .brand {
+  background-color: #AA22AA; /* Purple */
   color: #fff;
-  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
 }
-.top-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 0.5rem;
+.logo {
+  font-size: 2rem;
 }
 
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-btn img {
+  width: 24px;
+  height: 24px;
+}
 /* Lesson Container */
 .lesson-container {
   max-width: 500px;
