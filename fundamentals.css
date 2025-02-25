@@ -43,20 +43,14 @@ body {
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas:
-    "header"
-    "content"
-    "footer";
+  grid-template-rows: auto auto 1fr auto;
 }
 
 /* Lesson Header */
 .lesson-header {
-  grid-area: header;
   padding: 1rem;
-  border-bottom: 1px solid #ddd;
   text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 .lesson-header h1 {
   color: #AA22AA;
@@ -83,10 +77,12 @@ body {
   width: 0%;
   transition: width 0.3s ease;
 }
+.progress-overview p {
+  font-size: 0.9rem;
+}
 
 /* Lesson Navigation (Outline) */
 .lesson-nav {
-  grid-area: content;
   padding: 0.75rem;
   border-bottom: 1px solid #ddd;
   background-color: #f8f8f8;
@@ -96,20 +92,22 @@ body {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
-.lesson-nav ul {
-  list-style: none;
+.lesson-nav ol {
+  list-style: decimal;
+  padding-left: 1rem;
 }
-.lesson-nav ul li {
+.lesson-nav ol li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #ddd;
   cursor: pointer;
-  font-size: 1rem;
   color: #AA22AA;
 }
-.lesson-nav ul li.active,
-.lesson-nav ul li:hover {
+.lesson-nav ol li.active {
   background-color: #AA22AA;
   color: #fff;
+}
+.lesson-nav ol li.locked {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 /* Lesson Content */
@@ -119,9 +117,12 @@ body {
 .lesson-section {
   margin-bottom: 1.5rem;
 }
+.lesson-section.hidden {
+  display: none;
+}
 .lesson-section h2 {
   color: #AA22AA;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 .lesson-section p {
@@ -129,40 +130,68 @@ body {
   line-height: 1.5;
   margin-bottom: 0.75rem;
 }
-.lesson-section img {
-  width: 100%;
-  border-radius: 4px;
-  margin-bottom: 0.75rem;
-}
 
-/* Quiz Section */
-.quiz-container {
-  padding: 1rem;
-  background-color: #f0f0f0;
+/* Mini Test (Quiz) */
+.mini-test {
+  background-color: #eef;
+  padding: 0.75rem;
   border-radius: 4px;
+  margin-top: 1rem;
 }
-.quiz-container p {
-  margin-bottom: 0.5rem;
+.mini-test p {
   font-size: 0.95rem;
+  margin-bottom: 0.5rem;
 }
-.quiz-container button {
+.mini-test label {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.test-btn {
   background-color: #AA22AA;
   color: #fff;
   border: none;
   border-radius: 4px;
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
-}
-.quiz-feedback {
   margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 0.95rem;
+}
+
+/* Modal Popup for Quiz Feedback */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+#modal-close-btn {
+  background-color: #AA22AA;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
 /* Lesson Footer */
 .lesson-footer {
-  grid-area: footer;
   padding: 1rem;
   border-top: 1px solid #ddd;
   text-align: center;
@@ -180,19 +209,6 @@ body {
 
 /* ========== Desktop Styles (Min Width: 500px) ========== */
 @media (min-width: 500px) {
-  .lesson-container {
-    max-width: 800px;
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-      "header header"
-      "nav content"
-      "footer footer";
-  }
-  .lesson-header {
-    grid-area: header;
-  }
   .lesson-nav {
     grid-area: nav;
     border-right: 1px solid #ddd;
@@ -206,4 +222,11 @@ body {
   .lesson-footer {
     grid-area: footer;
   }
-  .lesson-header h1 { font-size: 1.8rem; }\n  .nav-btn { padding: 0.6rem 1rem; font-size: 1rem; }\n}
+  .lesson-header h1 {
+    font-size: 2rem;
+  }
+  .nav-btn {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+}
