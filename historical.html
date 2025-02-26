@@ -104,7 +104,7 @@
                 <label><input type="radio" name="q3" value="fingers"> Fingers</label><br>
                 <label><input type="radio" name="q3" value="stones"> Stones</label><br>
                 <label><input type="radio" name="q3" value="pebbles"> Pebbles</label><br>
-                <label><input type="radio" name="q3" value="lights"> Lights</label><br>
+                <label><input type="radio" name="quiz-question-3" value="lights"> Lights</label><br>
               </div>
             <!-- Navigation Buttons -->
             <div class="quiz-navigation">
@@ -117,26 +117,84 @@
       </section>
       
 
-      <!-- Outline 2: Mechanical Counting Devices -->
-      <section id="outline-2" class="lesson-section hidden">
-        <h2>2. Mechanical Counting Devices</h2>
-        <p>
-          As societies advanced, mechanical devices like the abacus were invented to aid in counting.
-          Later, tools such as the slide rule, logarithmic instruments, and the Pascal calculator enhanced calculation capabilities.
+      
+    <!-- Outline 2: Mechanical Counting Devices -->
+    <section id="outline-2" class="lesson-section hidden">
+      <h2>Mechanical Counting Devices</h2>
+      <p>
+        As societies advanced, mechanical devices like the abacus were invented to aid in counting.
+        Later, tools such as the slide rule, logarithmic instruments, and the Pascal calculator enhanced calculation capabilities.
+      </p>
+      <ul>
+        <li>Abacus</li>
+        <li>Slide Rule</li>
+        <li>Pascal&rsquo;s Calculator</li>
+      </ul>
+      
+      <!-- Four Content Blocks for Early Counting Devices -->
+      <div class="content-block" data-content="1">
+        <h3>Abacus</h3>
+        <p>The Abacus is a simple device made of wood and beads and is used for counting numbers larger than the amount the early counting device was capable. <br> An abacus consists of a two-dimensional array of slidable beads (or similar objects). In their earliest designs, the beads could be loose on a flat surface or sliding in grooves. Later the beads were made to slide on rods and built into a frame, allowing faster manipulation. 
+        <br>Each rod typically represents one digit of a multi-digit number laid out using a positional numeral system such as base ten (though some cultures used different numerical bases).</p>
+        <img src="assests/abacus.jpg" alt="Abacus">
+      </div>
+      <div class="content-block" data-content="2">
+        <h3>Slide Rule</h3>
+        <p>The slide rule, or slipstick, is a mechanical analog computer. The slide rule is used mainly for multiplication and division, and also for "scientific" functions such as roots, logarithms and trigonometry, but usually not for addition or subtraction.
+          <br>There are many different styles of slide rules. They are usually linear or circular. They have a standardised set of markings (called scales). These scales are used for mathematical computations. Some slide rules have been made for special use, as for aviation or finance. Those slide rules have special scales for those applications, as well as normal scales.
         </p>
-        <ul>
-          <li><strong>Abacus:</strong> A simple device using beads for counting.</li>
-          <li><strong>Slide Rule:</strong> A tool for multiplication and division before the electronic calculator.</li>
-          <li><strong>Pascal Calculator:</strong> An early mechanical calculator invented by Blaise Pascal.</li>
-        </ul>
-        <p>[Image Placeholder: Mechanical counting devices illustration]</p>
-        <!-- Mini Test Placeholder for Outline 2 -->
-        <div class="mini-test">
-          <p><strong>Mini Test:</strong> [10-question quiz placeholder for Mechanical Counting Devices]</p>
-          <!-- (Quiz questions will be added later) -->
-          <button class="test-btn" data-outline="2">Submit Answers</button>
+        <img src="assests/slide rule.jpg" alt="Slide rule">
+      </div>
+      <div class="content-block" data-content="3">
+        <h3>Pascal&rsquo;s Calculator</h3>
+        <p>Pascal's calculator is a mechanical calculator invented by Blaise Pascal in 1642. Pascal was led to develop a calculator by the laborious arithmetical calculations required by his father's work as the supervisor of taxes in Rouen. He designed the machine to add and subtract two numbers directly and to perform multiplication and division through repeated addition or subtraction. 
+          <br>Pascal's calculator was especially successful in the design of its carry mechanism, which adds 1 to 9 on one dial, and carries 1 to the next dial when the first dial changes from 9 to 0. His innovation made each digit independent of the state of the others, enabling multiple carries to rapidly cascade from one digit to another regardless of the machine's capacity.
+        </p>
+        <img src="assests/pascal calculator.jpg" alt="Pascal calculator">
+      </div>
+      <div class="content-block" data-content="4">
+        <h3>Cowries</h3>
+        <p>Cowries were also used to count and perform simple arithmetic in ancient time. <br> This technique also took too much energy, especially when large numbers were involved.</p>
+        <img src="assests/cowries.jpg" alt="cowries">
+      </div>
+      
+      <div class="quiz-section" id="quiz-outline-1">
+          <h3>Quiz: Early Counting Devices</h3>
+          <!-- Quiz Question Containers -->
+          <div class="quiz-question" id="quiz-question-1">
+            <h5>Question 1</h5>
+            <p><strong>All of the following are ancient counting devices except ________</strong></p>
+            <label><input type="radio" name="q1" value="finger"> Finger</label><br>
+            <label><input type="radio" name="q1" value="stone"> Stones</label><br>
+            <label><input type="radio" name="q1" value="stick"> Sticks</label><br>
+            <label><input type="radio" name="q1" value="paper"> Paper</label><br>
+          </div>
+          <div class="quiz-question hidden" id="quiz-question-2">
+            <h5>Question 2</h5>
+            <p><strong>The simple ancient device which helps in carrying out simple arithmetic is ______</strong></p>
+            <label><input type="radio" name="q2" value="fingers"> Fingers</label><br>
+            <label><input type="radio" name="q2" value="head"> Head</label><br>
+            <label><input type="radio" name="q2" value="legs"> Legs</label><br>
+            <label><input type="radio" name="q2" value="pebble"> Pebbles</label><br>
+          </div>
+          <div class="quiz-question hidden" id="quiz-question-3">
+              <h5>Question 3</h5>
+              <p><strong>Because of the inability of fingers to count large numbers, the early man used _______</strong></p>
+              <label><input type="radio" name="q3" value="fingers"> Fingers</label><br>
+              <label><input type="radio" name="q3" value="stones"> Stones</label><br>
+              <label><input type="radio" name="q3" value="pebbles"> Pebbles</label><br>
+              <label><input type="radio" name="quiz-question-3" value="lights"> Lights</label><br>
+            </div>
+          <!-- Navigation Buttons -->
+          <div class="quiz-navigation">
+            <button class="quiz-prev" id="quiz-prev-btn">Previous Question</button>
+            <button class="quiz-next" id="quiz-next-btn">Next Question</button>
+            <button class="quiz-submit" id="quiz-submit-btn">Submit Quiz</button>
+          </div>
         </div>
-      </section>
+        
+    </section>
+
 
       <!-- Outline 3: Electronic Counting Devices -->
       <section id="outline-3" class="lesson-section hidden">
@@ -171,7 +229,7 @@
       <button class="nav-btn" id="mark-complete-btn">Mark Lesson as Complete</button>
       <div class="prev-next">
         <button class="nav-btn" id="prev-lesson-btn">&larr; Previous</button>
-        <button class="nav-btn" id="next-lesson-btn">Next Lesson &rarr;</button>
+        <button class="nav-btn" id="next-lesson-btn">Next &rarr;</button>
       </div>
     </footer>
   </div>
