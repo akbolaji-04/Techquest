@@ -169,6 +169,9 @@ body {
 .quiz-section input[type="radio"]{
     margin-right: 0.5rem;
 }
+.quiz-section hidden{
+    display: none;
+}
 /* Mini Test (Quiz) */
 .mini-test {
   background-color: #eef;

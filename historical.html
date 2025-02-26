@@ -79,23 +79,41 @@
           <img src="assests/cowries.jpg" alt="cowries">
         </div>
         
-        <!-- Quiz Section for Outline 1 -->
         <div class="quiz-section" id="quiz-outline-1">
-          <h3>Quiz: Early Counting Devices</h3>
-          <div class="quiz-question" id="quiz-question">
-            <h5>Question 1</h5>
-            <p><strong>All of the following are ancient counting devices except ________</strong></p>
-            <label><input type="radio" name ="q1" value = "finger">Finger</label>
-            <label><input type="radio" name ="q1" value = "stone">Stones</label>
-            <label><input type="radio" name ="q1" value = "stick">Sticks</label>
-            <label><input type="radio" name ="q1" value = "paper">Paper</label>
+            <h3>Quiz: Early Counting Devices</h3>
+            <!-- Quiz Question Containers -->
+            <div class="quiz-question" id="quiz-question-1">
+              <h5>Question 1</h5>
+              <p><strong>All of the following are ancient counting devices except ________</strong></p>
+              <label><input type="radio" name="q1" value="finger"> Finger</label><br>
+              <label><input type="radio" name="q1" value="stone"> Stones</label><br>
+              <label><input type="radio" name="q1" value="stick"> Sticks</label><br>
+              <label><input type="radio" name="q1" value="paper"> Paper</label><br>
+            </div>
+            <div class="quiz-question hidden" id="quiz-question-2">
+              <h5>Question 2</h5>
+              <p><strong>The simple ancient device which helps in carrying out simple arithmetic is ______</strong></p>
+              <label><input type="radio" name="q2" value="fingers"> Fingers</label><br>
+              <label><input type="radio" name="q2" value="head"> Head</label><br>
+              <label><input type="radio" name="q2" value="legs"> Legs</label><br>
+              <label><input type="radio" name="q2" value="pebble"> Pebbles</label><br>
+            </div>
+            <div class="quiz-question hidden" id="quiz-question-3">
+                <h5>Question 3</h5>
+                <p><strong>Because of the inability of fingers to count large numbers, the early man used _______</strong></p>
+                <label><input type="radio" name="q3" value="fingers"> Fingers</label><br>
+                <label><input type="radio" name="q3" value="stones"> Stones</label><br>
+                <label><input type="radio" name="q3" value="pebbles"> Pebbles</label><br>
+                <label><input type="radio" name="q3" value="lights"> Lights</label><br>
+              </div>
+            <!-- Navigation Buttons -->
+            <div class="quiz-navigation">
+              <button class="quiz-prev" id="quiz-prev-btn">Previous Question</button>
+              <button class="quiz-next" id="quiz-next-btn">Next Question</button>
+              <button class="quiz-submit" id="quiz-submit-btn">Submit Quiz</button>
+            </div>
           </div>
-          <div class="quiz-navigation">
-            <button class="quiz-prev">Previous Question</button>
-            <button class="quiz-next">Next Question</button>
-            <button class="quiz-submit">Submit Quiz</button>
-          </div>
-        </div>
+          
       </section>
       
 
