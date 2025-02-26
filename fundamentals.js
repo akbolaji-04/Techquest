@@ -8,6 +8,22 @@ const totalOutlines = 8;
 let currentOutline = 1;
 let userDocRef = null;
 
+// Correct answers for each mini-test (outline 1-7) and final quiz (outline 8: an object with multiple questions)
+const correctAnswers = {
+  1: "device",
+  2: "1940s",
+  3: "super",
+  4: "cpu",
+  5: "input",
+  6: "os",
+  7: "cloud",
+  // For outline 8, we'll use an object where keys are question numbers
+  8: {
+    q1: "cpu",
+    q2: "random" // For demonstration: correct answer for Q2 is "Random Access Memory"
+  }
+};
+
 // ----- Firebase Integration: Load or Create User Progress -----
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
@@ -17,28 +33,23 @@ onAuthStateChanged(auth, async (user) => {
   userDocRef = doc(db, "users", user.uid);
   let userDocSnap = await getDoc(userDocRef);
   if (!userDocSnap.exists()) {
-    // Create a default document for the fundamentals lesson
     await setDoc(userDocRef, {
       fundamentals: {
-        progress: 0, // overall progress percentage
-        completedOutlines: [] // array of completed outline numbers
+        progress: 0,
+        completedOutlines: []
       }
     });
     userDocSnap = await getDoc(userDocRef);
   }
-  // Get current progress data
-  const fundamentalsData = userDocSnap.data().fundamentals;
+  const fundamentalsData = userDocSnap.data().fundamentals || { completedOutlines: [], progress: 0 };
   const completed = fundamentalsData.completedOutlines || [];
-  // Set currentOutline to one more than the max completed outline (min 1)
   if (completed.length > 0) {
     currentOutline = Math.max(...completed) + 1;
     if (currentOutline > totalOutlines) {
       currentOutline = totalOutlines;
     }
   }
-  // Unlock outlines based on completed array
   unlockOutlines(completed);
-  // Show the current outline section
   showSection(`outline-${currentOutline}`);
   updateOverallProgress();
 });
@@ -55,7 +66,6 @@ function showSection(sectionId) {
 
 // ----- Outline Navigation (Updating the Outline List) -----
 function unlockOutlines(completedArray) {
-  // For each outline in the nav list, if its number is in completedArray, mark it as complete; otherwise, if it's the next outline to complete, unlock it.
   const items = document.querySelectorAll('#outline-list li');
   items.forEach(item => {
     const outlineNum = parseInt(item.getAttribute('data-outline'));
@@ -81,7 +91,6 @@ modalCloseBtn.addEventListener('click', async () => {
   modal.classList.add('hidden');
   // If the modal was shown after a successful mini-test, mark current outline as complete
   await markOutlineComplete(currentOutline);
-  // Unlock next outline if exists
   if (currentOutline < totalOutlines) {
     currentOutline++;
     unlockOutlines([].concat(getCompletedOutlines(), currentOutline - 1));
@@ -92,67 +101,98 @@ modalCloseBtn.addEventListener('click', async () => {
   }
 });
 
-// ----- Mini Test (Quiz) Logic for Each Outline -----
+// ----- Mini Test Logic for Outlines 1-7 -----
 const testButtons = document.querySelectorAll('.test-btn');
 testButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const outlineNumber = parseInt(btn.getAttribute('data-outline'));
-    // For demonstration purposes, assume the correct answer is the last radio option.
-    const miniTestDiv = btn.parentElement;
-    const radios = miniTestDiv.querySelectorAll('input[type="radio"]');
-    let answered = false;
-    let isCorrect = false;
-    radios.forEach((radio, index) => {
-      if (radio.checked) {
-        answered = true;
-        if (index === radios.length - 1) { // last option is considered correct
-          isCorrect = true;
+    if (outlineNumber < 8) {
+      const correctAnswer = correctAnswers[outlineNumber];
+      const miniTestDiv = btn.parentElement;
+      const radios = miniTestDiv.querySelectorAll('input[type="radio"]');
+      let answered = false;
+      let isCorrect = false;
+      radios.forEach(radio => {
+        if (radio.checked) {
+          answered = true;
+          if (radio.value === correctAnswer) {
+            isCorrect = true;
+          }
         }
+      });
+      if (!answered) {
+        showModal("Please select an answer before submitting!");
+        return;
       }
-    });
-    if (!answered) {
-      showModal("Please select an answer before submitting!");
-      return;
-    }
-    if (isCorrect) {
-      const funFacts = [
-        "Great job! Did you know the first computer weighed over 27 tons?",
-        "Excellent! Computers operate in binary—0s and 1s!",
-        "Awesome! The word 'computer' originally referred to people who computed."
-      ];
-      const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
-      showModal("Correct! " + randomFact);
+      if (isCorrect) {
+        const funFacts = [
+          "Great job! Did you know the first computer weighed over 27 tons?",
+          "Excellent! Computers operate in binary—0s and 1s!",
+          "Awesome! The word 'computer' originally referred to people who computed."
+        ];
+        const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+        showModal("Correct! " + randomFact);
+      } else {
+        showModal("Incorrect. Please review the section and try again!");
+      }
     } else {
-      showModal("Incorrect. Please review the section and try again!");
+      // Final Quiz (Outline 8): handle separately
+      handleFinalQuiz();
     }
   });
 });
 
+// ----- Final Quiz Logic for Outline 8 -----
+function handleFinalQuiz() {
+  const miniTestDiv = document.querySelector('#outline-8 .mini-test');
+  // For final quiz, we assume there are two questions:
+  const q1 = miniTestDiv.querySelector("input[name='q8_1']:checked");
+  const q2 = miniTestDiv.querySelector("input[name='q8_2']:checked");
+  if (!q1 || !q2) {
+    showModal("Please answer all final quiz questions!");
+    return;
+  }
+  let score = 0;
+  if (q1.value === correctAnswers[8].q1) score++;
+  if (q2.value === correctAnswers[8].q2) score++;
+  
+  let message = "";
+  if (score === 2) {
+    const funFacts = [
+      "Amazing! You really know your stuff!",
+      "Outstanding! Computers and you are a perfect match!",
+      "Brilliant! Keep up the great work!"
+    ];
+    message = "All correct! " + funFacts[Math.floor(Math.random() * funFacts.length)];
+  } else {
+    message = "You got " + score + " out of 2 correct. Review the lesson and try again!";
+  }
+  showModal(message);
+}
+
 // ----- Modal Display Function -----
 function showModal(message) {
-  modalMessage.innerHTML = message;
+  modalMessage.textContent = message;
   modal.classList.remove('hidden');
 }
 
-// ----- Mark Outline as Complete and Update Firebase Progress -----
+// ----- Mark Outline as Complete & Update Firebase Progress -----
 async function markOutlineComplete(outlineNumber) {
-  // Update local outline list (for demo, we'll assume marking is just adding the outline number to completedOutlines)
   const userDocSnap = await getDoc(userDocRef);
-  let completed = userDocSnap.data().fundamentals.completedOutlines || [];
+  const fundamentalsData = userDocSnap.data().fundamentals || { completedOutlines: [], progress: 0 };
+  let completed = fundamentalsData.completedOutlines || [];
   if (!completed.includes(outlineNumber)) {
     completed.push(outlineNumber);
   }
-  // Update overall progress: (number of completed outlines / totalOutlines) * 100
-  const progressPercent = Math.floor((completed.length / totalOutlines) * 100);
+  const progressPercent = outlineNumber === totalOutlines ? 100 : Math.floor((completed.length / totalOutlines) * 100);
   await updateDoc(userDocRef, {
     "fundamentals.completedOutlines": completed,
     "fundamentals.progress": progressPercent
   });
 }
 
-// Helper to get completed outlines from Firestore synchronously (for demo, we assume local variable, or you can cache it)
+// Helper: Get completed outlines from the DOM
 function getCompletedOutlines() {
-  // For simplicity in this demo, we can read from the DOM (the nav items marked active and not locked)
   const completed = [];
   document.querySelectorAll('#outline-list li.active').forEach(li => {
     completed.push(parseInt(li.getAttribute('data-outline')));
@@ -160,19 +200,56 @@ function getCompletedOutlines() {
   return completed;
 }
 
-// Update overall progress display (read current outline from Firestore if needed)
+// ----- Update Overall Progress Display -----
 async function updateOverallProgress() {
+  if (!userDocRef) return;
   const userDocSnap = await getDoc(userDocRef);
-  const progress = userDocSnap.data().fundamentals.progress || 0;
+  if (!userDocSnap.exists()) return;
+  const fundamentalsData = userDocSnap.data().fundamentals || { completedOutlines: [], progress: 0 };
+  const progress = fundamentalsData.progress || 0;
   document.getElementById("overall-progress").style.width = progress + "%";
   document.getElementById("overall-progress-text").textContent = progress;
 }
 
-// ----- (Optional) Additional Firebase Integration -----
-// You can add further logic to handle saving individual quiz scores, timestamps, etc.
-
-// ----- Initialization: Show Only the First Outline Initially -----
+// ----- Navigation Buttons for Prev/Next Lesson -----
 document.addEventListener('DOMContentLoaded', () => {
+  const prevLessonBtn = document.getElementById('prev-lesson-btn');
+  const nextLessonBtn = document.getElementById('next-lesson-btn');
+  const markCompleteBtn = document.getElementById('mark-complete-btn');
+
+  if (prevLessonBtn) {
+    prevLessonBtn.addEventListener('click', () => {
+      if (currentOutline > 1) {
+        currentOutline--;
+        showSection(`outline-${currentOutline}`);
+        updateOverallProgress();
+      }
+    });
+  }
+
+  if (nextLessonBtn) {
+    nextLessonBtn.addEventListener('click', () => {
+      if (currentOutline < totalOutlines) {
+        currentOutline++;
+        showSection(`outline-${currentOutline}`);
+        updateOverallProgress();
+      }
+    });
+  }
+
+  if (markCompleteBtn) {
+    markCompleteBtn.addEventListener('click', async () => {
+      await markOutlineComplete(currentOutline);
+      if (currentOutline < totalOutlines) {
+        currentOutline++;
+        showSection(`outline-${currentOutline}`);
+      } else {
+        alert("Congratulations! You've completed the Fundamentals lesson!");
+      }
+      updateOverallProgress();
+    });
+  }
+
   // Hide all sections except the first outline
   for (let i = 2; i <= totalOutlines; i++) {
     const section = document.getElementById(`outline-${i}`);
