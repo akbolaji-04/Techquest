@@ -172,6 +172,20 @@ body {
 .quiz-section hidden{
     display: none;
 }
+.quiz-navigation{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.quiz-navigation button{
+    background-color: #AA22AA;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
 /* Mini Test (Quiz) */
 .mini-test {
   background-color: #eef;
