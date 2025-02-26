@@ -1,4 +1,3 @@
-// dashboard.js
 import { auth, db, onAuthStateChanged } from "./firebase.js";
 import {
   doc,
@@ -67,33 +66,36 @@ function updateUI(progress, lessonsCompleted, totalLessons, timeSpent) {
   progressBar.style.width = progress + "%";
   progressPercentage.textContent = `${progress}%`;
 }
+
 document.addEventListener("DOMContentLoaded", function () {
-    const featureContainer = document.querySelector(".feature-card-container");
-  
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-  
-    featureContainer.addEventListener("mousedown", (e) => {
-      isDown = true;
-      startX = e.pageX - featureContainer.offsetLeft;
-      scrollLeft = featureContainer.scrollLeft;
-    });
-  
-    featureContainer.addEventListener("mouseleave", () => {
-      isDown = false;
-    });
-  
-    featureContainer.addEventListener("mouseup", () => {
-      isDown = false;
-    });
-  
-    featureContainer.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - featureContainer.offsetLeft;
-      const walk = (x - startX) * 2; // Adjust scroll speed
-      featureContainer.scrollLeft = scrollLeft - walk;
-    });
+  const featureContainer = document.querySelector(".feature-card-container");
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  featureContainer.addEventListener("mousedown", (e) => {
+    isDown = true;
+    featureContainer.classList.add("active");
+    startX = e.pageX - featureContainer.offsetLeft;
+    scrollLeft = featureContainer.scrollLeft;
   });
-  
+
+  featureContainer.addEventListener("mouseleave", () => {
+    isDown = false;
+    featureContainer.classList.remove("active");
+  });
+
+  featureContainer.addEventListener("mouseup", () => {
+    isDown = false;
+    featureContainer.classList.remove("active");
+  });
+
+  featureContainer.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - featureContainer.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust scroll speed
+    featureContainer.scrollLeft = scrollLeft - walk;
+  });
+});
