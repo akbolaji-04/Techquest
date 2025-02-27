@@ -76,7 +76,7 @@ header {
 
 /* RECOMMENDED SECTION CARDS */
 .recommended-block {
-  flex: 0 0 80%; /* Ensure only one block is visible at a time */
+  flex: 0 0 60%; /* Ensure only one block is visible at a time */
   display: flex;
   flex-direction: column;
   gap: 1rem; /* Space between cards */
