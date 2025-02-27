@@ -293,6 +293,7 @@ p {
     font-family: 'Crimson Text', serif;
     background-color: #ffffff;  /* Revert mobile to white */
     color: #333;
+    min-height: 100vh;
 
   }
 
