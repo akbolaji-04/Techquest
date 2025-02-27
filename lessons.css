@@ -49,6 +49,9 @@ header {
 }
 
 /* Section Titles */
+.recommended-section  {
+  padding-left: 20px;
+}
 .recommended-section h2,
 .special-courses-section h2 {
   color: #AA22AA;
@@ -118,6 +121,9 @@ header {
 }
 
 /* SPECIAL COURSES CARDS */
+.special-courses-section{
+  padding-left: 20px;
+}
 .special-card {
   flex: 0 0 auto;
   scroll-snap-align: start;

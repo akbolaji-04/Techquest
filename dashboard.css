@@ -263,8 +263,8 @@ body {
   align-items: center;
 }
 
-p {
-  font-size: 12px;
+.feature-card p {
+  font-size: 10px;
 }
 
 .feature-card img {
