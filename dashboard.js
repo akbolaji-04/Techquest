@@ -17,6 +17,9 @@ onAuthStateChanged(auth, async (user) => {
   const firstName = user.displayName ? user.displayName.split(" ")[0] : "User";
   document.getElementById("username").textContent = firstName;
 
+  // Set full name in the dropdown menu
+  document.getElementById("full-name").textContent = user.displayName || "Full Name";
+
   // Reference user document in Firestore
   const userDocRef = doc(db, "users", user.uid);
 
@@ -97,5 +100,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const x = e.pageX - featureContainer.offsetLeft;
     const walk = (x - startX) * 2; // Adjust scroll speed
     featureContainer.scrollLeft = scrollLeft - walk;
+  });
+
+  const menuBtn = document.querySelector(".nav-btn:nth-child(2)");
+  const dropdownMenu = document.getElementById("dropdown-menu");
+
+  menuBtn.addEventListener("click", () => {
+    dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+  });
+
+  // Close the dropdown if clicked outside
+  window.addEventListener("click", (e) => {
+    if (!menuBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+      dropdownMenu.style.display = "none";
+    }
+  });
+
+  // Logout functionality
+  document.getElementById("logout-btn").addEventListener("click", () => {
+    auth.signOut().then(() => {
+      window.location.href = "welcome.html";
+    }).catch((error) => {
+      console.error("Error signing out:", error);
+    });
   });
 });

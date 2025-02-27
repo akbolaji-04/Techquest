@@ -10,7 +10,35 @@ body {
   font-family: 'Crimson Text', 'Playfair Display';
   background: #f5f5f5;
   color: #333;
-  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #AA22AA; /* Purple */
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-btn img {
+  width: 24px;
+  height: 24px;
 }
 
 /* Header */
@@ -22,7 +50,7 @@ header {
 /* Section Titles */
 .recommended-section h2,
 .special-courses-section h2 {
-  color: #AA22AA;/*eak as needed */
+  color: #AA22AA;
   margin-bottom: 0.8rem;
 }
 
@@ -43,9 +71,16 @@ header {
 }
 
 /* RECOMMENDED SECTION CARDS */
+.recommended-block {
+  flex: 0 0 100%; /* Ensure only one block is visible at a time */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between cards */
+  scroll-snap-align: start;
+}
+
 .recommended-card {
   flex: 0 0 auto;
-  scroll-snap-align: start;
   background-image: linear-gradient(45deg, #fff, 50%, #AA22AA); /* Gradient background */
   border-radius: 8px;
   padding: 1rem;

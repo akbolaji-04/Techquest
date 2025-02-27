@@ -8,6 +8,20 @@
   <link rel="stylesheet" href="lessons.css" />
 </head>
 <body>
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <h1 class="logo">Tech Quest</h1>
+    </div>
+    <div class="nav-right">
+      <button class="nav-btn">
+        <img src="assests/Profile Icon.png" alt="User Icon" />
+      </button>
+      <button class="nav-btn">
+        <img src="assests/Menu.png" alt="Menu Icon" />
+      </button>
+    </div>
+  </nav>
   <header>
     <h1>Lessons</h1>
   </header>
@@ -16,58 +30,58 @@
   <section class="recommended-section">
     <h2>Recommended for You</h2>
     <div class="recommended-scroll">
-
-      <!-- Card 1: Fundamentals of Computer -->
-      <div class="recommended-card">
-        <img src="assests/Computer.png" alt="Computer Icon" />
-        <div class="card-text">
-          <h3>Fundamentals of Computer</h3>
-          <div class="progress-bar">
-            <div class="progress-bar-fill" id="fundamentals-progress-bar"></div>
+      <div class="recommended-block">
+        <!-- Card 1: Fundamentals of Computer -->
+        <div class="recommended-card">
+          <img src="assests/Computer.png" alt="Computer Icon" />
+          <div class="card-text">
+            <h3>Fundamentals of Computer</h3>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" id="fundamentals-progress-bar"></div>
+            </div>
+            <p><span id="fundamentals-progress">0</span>%</p>
+            <a href="fundamentals.html"><button class="resume-btn">Resume</button></a>
           </div>
-          <p><span id="fundamentals-progress">0</span>%</p>
-          <a href="fundamentals.html"><button class="resume-btn">Resume</button></a>
+        </div>
+        <!-- Card 2: History of Computer -->
+        <div class="recommended-card">
+          <img src="assests/History.jpg" alt="History" />
+          <div class="card-text">
+            <h3>History of Computer</h3>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" id="history-progress-bar"></div>
+            </div>
+            <p><span id="history-progress">0</span>%</p>
+            <a href="historical.html"><button class="resume-btn">Resume</button></a>
+          </div>
         </div>
       </div>
-
-      <!-- Card 2: Operating Systems -->
-      <div class="recommended-card">
-        <img src="assests/History.jpg" alt="History" />
-        <div class="card-text">
-          <h3>History of Computer</h3>
-          <div class="progress-bar">
-            <div class="progress-bar-fill" id="operating-systems-progress-bar"></div>
+      <div class="recommended-block">
+        <!-- Card 3: Software Applications -->
+        <div class="recommended-card">
+          <img src="assests/Software logo.png" alt="Software Applications Icon" />
+          <div class="card-text">
+            <h3>Software Applications</h3>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" id="software-applications-progress-bar"></div>
+            </div>
+            <p><span id="software-applications-progress">0</span>%</p>
+            <button class="resume-btn">Resume</button>
           </div>
-          <p><span id="operating-systems-progress">0</span>%</p>
-          <a href="historical.html"><button class="resume-btn">Resume</button></a>
+        </div>
+        <!-- Card 4: Programming Basics -->
+        <div class="recommended-card">
+          <img src="assests/programming logo.png" alt="Programming Basics Icon" />
+          <div class="card-text">
+            <h3>Programming Basics</h3>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" id="programming-basics-progress-bar"></div>
+            </div>
+            <p><span id="programming-basics-progress">0</span>%</p>
+            <button class="resume-btn">Resume</button>
+          </div>
         </div>
       </div>
-
-      <!-- Card 3: Networking Basics -->
-      <div class="recommended-card">
-        <img src="assests/Software logo.png" alt="Networking Basics Icon" />
-        <div class="card-text">
-          <h3>Software Applications</h3>
-          <div class="progress-bar">
-            <div class="progress-bar-fill" id="networking-basics-progress-bar"></div>
-          </div>
-          <p><span id="networking-basics-progress">0</span>%</p>
-          <button class="resume-btn">Resume</button>
-        </div>
-      </div>
-
-      <!-- Card 4: Software Development -->
-      <div class="recommended-card">
-        <img src="assests/programming logo.png" alt="Programing Basics Icon" />
-        <div class="card-text">
-          <h3>Programing Basics</h3>
-          <div class="progress-bar">
-            <div class="progress-bar-fill" id="software-development-progress-bar"></div>
-          </div>
-          <p><span id="software-development-progress">0</span>%</p>
-          <button class="resume-btn">Resume</button>
-                </div>
-        </div>
     </div>
   </section>
 
@@ -75,7 +89,6 @@
   <section class="special-courses-section">
     <h2>Special Courses</h2>
     <div class="special-scroll">
-
       <!-- Card 1: Cyber Security -->
       <div class="special-card">
         <h3>Cyber Security</h3>
@@ -84,7 +97,6 @@
         </div>
         <p><span id="cyber-security-progress">0</span>%</p>
       </div>
-
       <!-- Card 2: Data Science -->
       <div class="special-card">
         <h3>Data Science</h3>
@@ -93,7 +105,6 @@
         </div>
         <p><span id="data-science-progress">0</span>%</p>
       </div>
-
       <!-- Card 3: Mobile App Dev -->
       <div class="special-card">
         <h3>Mobile App Dev</h3>
@@ -102,7 +113,6 @@
         </div>
         <p><span id="mobile-app-dev-progress">0</span>%</p>
       </div>
-
       <!-- Card 4: Product Design -->
       <div class="special-card">
         <h3>Product Design</h3>
