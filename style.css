@@ -1,0 +1,134 @@
+/* 
+  BASIC RESET & BODY STYLING
+  -----------------------------------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body{
+    height: 100%;
+  }
+  body {
+    font-family: 'Crimson Text', serif;
+    background-color: #007BFF; /* A bright blue background */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 
+    SPLASH CONTAINER
+    -----------------------------------
+    - Centers the splash screen content vertically and horizontally
+    - Takes up the full viewport height/width
+  */
+  .splash-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 
+    LOGO CIRCLE
+    -----------------------------------
+    - Creates the gray circle in the center
+  */
+  .logo-circle {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc; /* Gray circle */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  /* 
+    LOGO TEXT
+    -----------------------------------
+    - The "TQ TechQuest" text inside the circle
+  */
+  .logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #6f009e; /* A purple color */
+  }
+  
+  .logo-text span {
+    font-size: 18px;
+    display: block;
+  }
+  
+  /* 
+    AUTHOR
+    -----------------------------------
+    - Text at the bottom of the screen
+  */
+ .author {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Crimson Text', serif; /* Revert to Crimson Text here */
+}
+  
+  /* 
+    RESPONSIVE STYLES
+    -----------------------------------
+    - Adjust the sizes for smaller screens
+  */
+  
+  /* For mobile devices: max-width 600px */
+  @media (max-width: 600px) {
+    .logo-circle {
+      width: 120px;
+      height: 120px;
+    }
+    .logo-text img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
+    .logo-text span {
+      font-size: 16px;
+    }
+    .author {
+      font-size: 12px;
+    }
+    
+    
+  }
+  
+  /* For larger devices: min-width 601px */
+  @media (min-width: 601px) {
+    .logo-circle {
+      width: 300px;
+      height: 300px;
+    }
+    .logo-text img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+    .logo-text span {
+      font-size: 30px;
+    }
+    .author {
+      font-size: 28px;
+    }
+    
+  }
+  

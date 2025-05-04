@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TechQuest - Firebase Google Auth</title>
+</head>
+<body>
+  <h1>Welcome to TechQuest</h1>
+  <button id="googleSignInBtn">Sign in with Google</button>
+
+  <!-- Include your bundled JavaScript file or use a module bundler -->
+  <script type="module">
+    import { signInWithGoogle } from "./firebase.js";
+    
+    document.getElementById("googleSignInBtn").addEventListener("click", () => {
+      signInWithGoogle();
+    });
+  </script>
+</body>
+</html>

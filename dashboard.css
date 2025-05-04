@@ -1,0 +1,533 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Crimson Text', serif;
+  background-color: #ffffff;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #AA22AA; /* Purple */
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 60px; /* Adjust based on your navbar height */
+  right: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropdown-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-item#user-profile {
+  background-color: #AA22AA;
+  color: #fff;
+}
+
+.dropdown-item#user-profile img {
+  filter: invert(1);
+}
+
+/* Main Container */
+.dashboard-container {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+#welcome-text {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #6f009e;
+}
+
+/* Quick Links */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quick-link-btn {
+  background-color: #AA22AA;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quick-link-btn img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.quick-link-btn:hover {
+  background-color: #500076;
+}
+
+/* Highlight Card */
+.highlight-card {
+  background-image: linear-gradient(to right, #ffffff, #AA22AA);
+}
+
+.highlight-card .card-content {
+  display: flex;
+  align-items: center;
+}
+
+.highlight-card .highlight-image {
+  width: 100px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.highlight-card .highlight-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-card h3 {
+  color: #AA22AA;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-card p {
+  font-size: 0.875rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.start-btn {
+  background-color: #AA22AA;
+  color: #fff;
+  border: none;
+  width: 150px;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.start-btn:hover {
+  background-color: #500076;
+}
+
+/* Progress Section */
+.progress-section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.progress-section h3 {
+  color: #AA22AA;
+  margin-bottom: 1rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #AA22AA;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+#progress-percentage {
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+/* Features Section */
+.features-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features-section h3 {
+  color: #AA22AA;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  height: 100%;
+  scroll-behavior: smooth; /* Ensure smooth scrolling */
+}
+
+.feature-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.feature-card {
+  flex: 0 0 auto;
+  width: 45%;
+  height: 300px;
+  scroll-snap-align: start;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-card p {
+  font-size: 10px;
+}
+
+.feature-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card h4 {
+  margin-bottom: 0.5rem;
+  color: #AA22AA;
+  font-size: 1.1rem;
+}
+
+/* ------------------ Mobile (up to 768px) ------------------ */
+@media (max-width: 768px) {
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body */
+  body {
+    font-family: 'Crimson Text', serif;
+    background-color: #ffffff;  /* Revert mobile to white */
+    color: #333;
+    min-height: 100vh;
+
+  }
+
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #AA22AA; /* Purple */
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-btn img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Main Container */
+  .dashboard-container {
+    margin: 0 auto;        
+    padding: 0 1rem;
+    width: 100%;            
+    max-width: 600px;       
+  }
+
+  #welcome-text {
+    text-align: center;
+    margin: 1rem 0;
+    color: #AA22AA;
+  }
+
+  /* Quick Links */
+  .quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .quick-link-btn {
+    background-color: #AA22AA;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .quick-link-btn img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+  }
+
+  .quick-link-btn:hover {
+    background-color: #500076;
+  }
+
+  /* Highlight Card */
+  .highlight-card {
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    height: 120px;
+    background-image: linear-gradient(to right, #ffffff, #AA22AA);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-card .card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1rem; /* Adds some internal spacing */
+  }
+
+  .highlight-card .highlight-image {
+    width: 80px;
+    height: auto;
+    margin-right: 0.5rem;
+  }
+
+  .highlight-card .highlight-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .highlight-card h3 {
+    color: #AA22AA;
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-card p {
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .start-btn {
+    background-color: #AA22AA;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+
+  .start-btn:hover {
+    background-color: #500076;
+  }
+
+  /* Progress Section */
+  .progress-section {
+    background-color: #fff;
+    /* Let height be auto so content doesn't overflow */
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+  }
+
+  .progress-section h3 {
+    color: #AA22AA;
+    margin-bottom: 1rem;
+  }
+
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background-color: #AA22AA;
+    width: 0%; /* Dynamically updated */
+    transition: width 0.3s ease;
+  }
+
+  #progress-percentage {
+    display: block;
+    text-align: right;
+    margin-top: 0.5rem;
+    color: #333;
+  }
+
+  /* Features Section */
+  .features-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .features-section h3 {
+    color: #AA22AA;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    height: 100%;
+  }
+
+  .feature-card-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .feature-card {
+    flex: 0 0 auto;
+    width: 50%;
+    height: 200px;
+    scroll-snap-align: start;
+    background-color: #F7F7F7;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .feature-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card h4 {
+    margin-bottom: 0.5rem;
+    color: #AA22AA;
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fundamentals of Computer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="fundamentals.css" />
+  <script type="module" src="fundamentals.js"></script>
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <h2 class="logo">Tech Quest</h2>
+    </div>
+    <div class="nav-right">
+      <a href="dashboard.html"><img src="assests/Home icon.png" alt="Home icon"></a>
+      <a href="#"><img src="assests/Profile Icon.png" alt="User Icon"></a>
+    </div>
+  </nav>
+
+  <!-- Main Lesson Container -->
+  <div class="lesson-container">
+    <!-- Header with Lesson Title and Overall Progress -->
+    <header class="lesson-header">
+      <h1>Fundamentals of Computer</h1>
+      <div class="progress-overview">
+        <div class="progress-bar">
+          <div class="progress" id="overall-progress" style="width: 0%;"></div>
+        </div>
+        <p>Overall Progress: <span id="overall-progress-text">0</span>%</p>
+      </div>
+    </header>
+
+    <!-- Lesson Outline Navigation -->
+    <aside class="lesson-nav">
+      <h3>Lesson Outline</h3>
+      <ol id="outline-list">
+        <li data-outline="1" class="active">1. Introduction</li>
+        <li data-outline="2" class="locked">2. History &amp; Evolution</li>
+        <li data-outline="3" class="locked">3. Types of Computers</li>
+        <li data-outline="4" class="locked">4. Basic Components</li>
+        <li data-outline="5" class="locked">5. How Computers Work</li>
+        <li data-outline="6" class="locked">6. Software vs Hardware</li>
+        <li data-outline="7" class="locked">7. Modern Trends</li>
+        <li data-outline="8" class="locked">8. Final Quiz</li>
+      </ol>
+    </aside>
+
+    <!-- Lesson Content Sections -->
+    <main class="lesson-content">
+      <!-- Sections dynamically rendered by JavaScript -->
+    </main>
+
+    <!-- Modal Popup for Quiz Feedback -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <p id="modal-message"></p>
+        <button id="modal-close-btn">OK</button>
+      </div>
+    </div>
+
+    <!-- Lesson Footer -->
+    <footer class="lesson-footer">
+      <button class="nav-btn" id="mark-complete-btn">Mark Lesson as Complete</button>
+      <div class="prev-next">
+        <button class="nav-btn" id="prev-lesson-btn">&larr; Previous Lesson</button>
+        <button class="nav-btn" id="next-lesson-btn">Next Lesson &rarr;</button>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

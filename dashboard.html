@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Quest Dashboard</title>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"rel="stylesheet"/>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <h1 class="logo">Tech Quest</h1>
+    </div>
+    <div class="nav-right">
+      <button class="nav-btn">
+        <img src="assests/Profile Icon.png" alt="User Icon" />
+      </button>
+      <button class="nav-btn">
+        <img src="assests/Menu.png" alt="Menu Icon" />
+      </button>
+      <!-- Dropdown Menu -->
+      <div class="dropdown-menu" id="dropdown-menu">
+        <div class="dropdown-item" id="user-profile">
+          <img src="assests/Profile Icon.png" alt="User Icon" />
+          <span id="full-name">Full Name</span>
+        </div>
+        <a href="#learning-progress" class="dropdown-item">Learning Progress</a>
+        <a href="#quizzes" class="dropdown-item">Quizzes</a>
+        <a href="lessons.html" class="dropdown-item">Lessons</a>
+        <a href="#assignments" class="dropdown-item">Assignments</a>
+        <a href="#settings" class="dropdown-item">Settings</a>
+        <a href="#" class="dropdown-item" id="logout-btn">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="dashboard-container">
+    <!-- Welcome Text -->
+    <h2 id="welcome-text">Welcome back, <span id="username">User</span></h2>
+    
+     <!-- Quick Links Buttons -->
+    <section class="quick-links">
+        <a href="lessons.html">
+          <button class="quick-link-btn">
+            <img src="assests/lesson icon.png" alt="Lesson Icon">Lesson</button>
+        </a>
+        <button class="quick-link-btn">
+          <img src="assests/Resume icon.png" alt="Resume Icon">Resume</button>
+        <button class="quick-link-btn">
+          <img src="assests/progress icon.png" alt="Progress icon">Progress</button>
+    </section>
+
+    <!-- "Fundamentals of Computer" Card -->
+    <section class="highlight-card">
+      <div class="card-content">
+        <img src="assests/Computer.png" alt="Computer Icon" class="highlight-image" />
+        <div class="highlight-text">
+        <h3>Fundamentals of Computer</h3>
+        <p>Discover the basics of computer: their components, how they work, and their roles.</p>
+        <a href="fundamentals.html"><button class="start-btn">Start Now</button></a>
+        </div>
+    </section>
+
+    <!-- Learning Progress Section -->
+    <section class="progress-section">
+      <!-- Progress Bar -->
+<div class="progress-container">
+  <div id="progress-bar" class="progress-bar"></div>
+  <span id="progress-percentage">0%</span>
+</div>
+
+<!-- Lessons Completed -->
+<p>Lessons Completed: <span id="lessons-completed">0</span> / <span id="total-lessons">10</span></p>
+
+<!-- Time Spent -->
+<p>Time Spent: <span id="time-spent">0 hours</span></p>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <h3>Features</h3>
+        <section class="feature-card-section">
+            <div class="feature-card-container">
+                <!-- Feature 1-->
+                
+                <div class="feature-card">
+                      <img src="assests/checklist 1.png" alt="Courses Icon" />
+                      <h4>Courses</h4>
+                      <p>Track how much of the syllabus you&rsquo;ve completed</p>
+                  </div>
+                
+                <div class="feature-card">
+                    <img src="assests/checklist 1.png" alt="Courses Icon" />
+                    <h4>Courses</h4>
+                    <p>Track how much of the syllabus you&rsquo;ve completed</p>
+                </div>
+                <div class="feature-card">
+                  <a href="lessons.html"><img src="assests/checklist 1.png" alt="Courses Icon" /></a>
+                  <h4>Courses</h4>
+                  <p>Track how much of the syllabus you&rsquo;ve completed</p>
+              </div>
+                <!-- Feature 2-->
+                <div class="feature-card">
+                    <img src="assests/voting 1.png" alt="Quizzes Icon" />
+                    <h4>Quizzes</h4>
+                    <p>Test your knowledge with interactive quizzes</p>
+                </div>
+                <!-- Feature 3-->
+                <div class="feature-card">
+                    <img src="assests/Assignment.png" alt="Assignments Icon" />
+                    <h4>Assignments</h4>
+                    <p>Complete and submit assignments</p>
+                </div>
+                <!-- Feature 4-->
+                <div class="feature-card">
+                    <img src="assests/rating 1.png" alt="Ratings Icon" />
+                    <h4>Ratings</h4>
+                    <p>Rate your learning experience</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+   
+
+    
+  </main>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

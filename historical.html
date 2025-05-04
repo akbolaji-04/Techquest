@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Development of Computers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="historical.css" />
+    <script type="module" src="historical.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <h2 class="logo">Tech Quest</h2> 
+    </div>
+    <div class="nav-right">
+      <a href="dashboard.html"><img src="assests/Home icon.png" alt="Home icon"></a>
+      <a href="#"><img src="assests/Profile Icon.png" alt="User Icon"></a>
+    </div>
+  </nav>
+
+  <!-- Main Lesson Container -->
+  <div class="lesson-container">
+    <!-- Header with Lesson Title and Overall Progress -->
+    <header class="lesson-header">
+      <h1>Historical Development of Computers</h1>
+      <div class="progress-overview">
+        <div class="progress-bar">
+          <div class="progress" id="overall-progress" style="width: 0%;"></div>
+        </div>
+        <p>Overall Progress: <span id="overall-progress-text">0</span>%</p>
+      </div>
+    </header>
+
+    <!-- Lesson Outline Navigation -->
+    <aside class="lesson-nav">
+      <h3>Lesson Outline</h3>
+      <ol id="outline-list">
+        <li data-outline="1" class="active">1. Early Counting Devices</li>
+        <li data-outline="2" class="locked">2. Mechanical Counting Devices</li>
+        <li data-outline="3" class="locked">3. Electronic Counting Devices</li>
+      </ol>
+    </aside>
+
+    <!-- Lesson Content Sections (Only one visible at a time) -->
+    <main class="lesson-content">
+      <!-- Outline 1: Early Counting Devices -->
+      <section id="outline-1" class="lesson-section">
+        <h2>1. Early Counting Devices</h2>
+        <p>In ancienttimes, the early man was a hunter and a flesh eater. He never had anything to count, but as time passed man started to think of cultivation of crops and rearing of farm animals. <br> Then, arose the need for him to count. Because of this, the early man began using the following devices to count numbers.</p>
+        <ul>
+            <li>Fingers</li>
+            <li>Stones</li>
+            <li>Sticks</li>
+            <li>Cowries</li>
+        </ul>
+        
+        <!-- Four Content Blocks for Early Counting Devices -->
+        <div class="content-block" data-content="1">
+          <h3>Fingers</h3>
+          <p>The ancient people made use of fingers to count. <br> Fingers can only be used to count digits from 1 to 10. And as time passed, the fingers and toes were used to count numbers more than 10</p>
+          <img src="assests/fingers.jpg" alt="FFngers image">
+        </div>
+        <div class="content-block" data-content="2">
+          <h3>Stones</h3>
+          <p>As a result of the stress of using fngers to count numbers of animals larger than 20. <br>The early  man learnt how to use stones and pebbles for counting  and also to count his wealth</p>
+          <img src="assests/srones.jpg" alt="Stones">
+        </div>
+        <div class="content-block" data-content="3">
+          <h3>Sticks</h3>
+          <p>Man later used sticks to count and perform addition and subtraction. <br> This technique also requires physical effort and a lot of stress in terms of performing larger calculation.</p>
+          <img src="assests/sticks.jpg" alt="Sticks">
+        </div>
+        <div class="content-block" data-content="4">
+          <h3>Cowries</h3>
+          <p>Cowries were also used to count and perform simple arithmetic in ancient time. <br> This technique also took too much energy, especially when large numbers were involved.</p>
+          <img src="assests/cowries.jpg" alt="cowries">
+        </div>
+        
+        <div class="quiz-section" id="quiz-outline-1">
+            <h3>Quiz: Early Counting Devices</h3>
+            <!-- Quiz Question Containers -->
+            <div class="quiz-question" id="quiz-question-1">
+              <h5>Question 1</h5>
+              <p><strong>All of the following are ancient counting devices except ________</strong></p>
+              <label><input type="radio" name="q1" value="finger"> Finger</label><br>
+              <label><input type="radio" name="q1" value="stone"> Stones</label><br>
+              <label><input type="radio" name="q1" value="stick"> Sticks</label><br>
+              <label><input type="radio" name="q1" value="paper"> Paper</label><br>
+            </div>
+            <div class="quiz-question hidden" id="quiz-question-2">
+              <h5>Question 2</h5>
+              <p><strong>The simple ancient device which helps in carrying out simple arithmetic is ______</strong></p>
+              <label><input type="radio" name="q2" value="fingers"> Fingers</label><br>
+              <label><input type="radio" name="q2" value="head"> Head</label><br>
+              <label><input type="radio" name="q2" value="legs"> Legs</label><br>
+              <label><input type="radio" name="q2" value="pebble"> Pebbles</label><br>
+            </div>
+            <div class="quiz-question hidden" id="quiz-question-3">
+                <h5>Question 3</h5>
+                <p><strong>Because of the inability of fingers to count large numbers, the early man used _______</strong></p>
+                <label><input type="radio" name="q3" value="fingers"> Fingers</label><br>
+                <label><input type="radio" name="q3" value="stones"> Stones</label><br>
+                <label><input type="radio" name="q3" value="pebbles"> Pebbles</label><br>
+                <label><input type="radio" name="quiz-question-3" value="lights"> Lights</label><br>
+              </div>
+            <!-- Navigation Buttons -->
+            <div class="quiz-navigation">
+              <button class="quiz-prev" id="quiz-prev-btn">Previous Question</button>
+              <button class="quiz-next" id="quiz-next-btn">Next Question</button>
+              <button class="quiz-submit" id="quiz-submit-btn">Submit Quiz</button>
+            </div>
+          </div>
+          
+      </section>
+      
+
+      
+    <!-- Outline 2: Mechanical Counting Devices -->
+    <section id="outline-2" class="lesson-section hidden">
+      <h2>Mechanical Counting Devices</h2>
+      <p>
+        As societies advanced, mechanical devices like the abacus were invented to aid in counting.
+        Later, tools such as the slide rule, logarithmic instruments, and the Pascal calculator enhanced calculation capabilities.
+      </p>
+      <ul>
+        <li>Abacus</li>
+        <li>Slide Rule</li>
+        <li>Logarithm</li>
+      </ul>
+      
+      <!-- Four Content Blocks for Mechanical Counting Devices -->
+      <div class="content-block" data-content="1">
+        <h3>Abacus</h3>
+        <p>An Abacus is a mechanical counting device which has a wooden frame. Around the year 1200 AD, the chinese used Abacus which was made of colored beads threaded on a string. The beads were threaded on lines of wire frame. Tje beands on the first wire counted the units, the beads on the second wire counted the tens, the beads on the third wire counted the hundreds and so on.
+        <br>By moving the beads back and forth along wires, numbers could be added, subtracted, multiplied, etc.</p>
+        <img src="assests/abacus.jpg" alt="Abacus">
+        <img src="assests/abacus 2.png" alt="Abacus">
+      </div>
+      <div class="content-block" data-content="2">
+        <h3>Slide Rule</h3>
+        <p>The slide rule is a calculating device that was based on the principles of logarithms. It is used for calculation which incolved multiplication and division. It was originated by Williams Qugthred in 1621. 
+          <br>The use of slide rule is only accurate to three or four decimal places. It was also used by engineers and scientists for extraction of note and calculation of numbers raised to powers.
+        </p>
+        <img src="assests/slide rule.jpg" alt="Slide rule">
+      </div>
+      <div class="content-block" data-content="3">
+        <h3>Logarithm</h3>
+        <p>Logarithms are tabulated in rows and columns to add, substract and multiply basic sums. John Napier, a Scottish mathematician, invented the logarithm in 1614. The logarithm is a mathematical concept that simplifies multiplication and division.
+        <br>Logarithms are used to solve complex mathematical problems and are the basis for the slide rule.</p> 
+        <img src="assests/Logarithm.jpg" alt="Logarithm">
+      </div>
+      
+      <div class="quiz-section" id="quiz-outline-1">
+          <h3>Quiz: Early Counting Devices</h3>
+          <!-- Quiz Question Containers -->
+          <div class="quiz-question" id="quiz-question-1">
+            <h5>Question 1</h5>
+            <p><strong>_____ is one of the mechanical  and counting devise used for calculations in the history of mankind.</strong></p>
+            <label><input type="radio" name="q1" value="stones"> Stones</label><br>
+            <label><input type="radio" name="q1" value="abacus"> Abacus</label><br>
+            <label><input type="radio" name="q1" value="fingers"> Fingers</label><br>
+            <label><input type="radio" name="q1" value="cowries"> Cowries</label><br>
+          </div>
+          <div class="quiz-question hidden" id="quiz-question-2">
+            <h5>Question 2</h5>
+            <p><strong>The mechanical device which has a wooden frame is a(an) ______</strong></p>
+            <label><input type="radio" name="q2" value="abacus"> Abacus</label><br>
+            <label><input type="radio" name="q2" value="slide"> Slide rule</label><br>
+            <label><input type="radio" name="q2" value="string"> String</label><br>
+            <label><input type="radio" name="q2" value="beads"> Beads</label><br>
+          </div>
+          <div class="quiz-question hidden" id="quiz-question-3">
+              <h5>Question 3</h5>
+              <p><strong>The beads on the first line of the Abacus counted the _____</strong></p>
+              <label><input type="radio" name="q3" value="units"> Units</label><br>
+              <label><input type="radio" name="q3" value="tens"> Tens</label><br>
+              <label><input type="radio" name="q3" value="beads"> Beads</label><br>
+              <label><input type="radio" name="q3" value="thousand"> Thousand</label><br>
+            </div>
+          <div class="quiz-question hidden" id="quiz-question-4">
+              <h5>Question 4</h5>
+              <p><strong>The calculating device which as based on the principles of logarithm is _____</strong></p>
+              <label><input type="radio" name="q4" value="slide"> Slide rule</label><br>
+              <label><input type="radio" name="q4" value="abacus"> Abacus</label><br>
+              <label><input type="radio" name="q4" value="ruler"> Ruler</label><br>
+              <label><input type="radio" name="q4" value="stones"> Stones</label><br>
+            </div>
+          <div class="quiz-question hidden" id="quiz-question-5">
+              <h5>Question 5</h5>
+              <p><strong>5.	The Scottish mathematician and politician is ____</strong></p>
+              <label><input type="radio" name="q5" value="pascal"> Pascal</label><br>
+              <label><input type="radio" name="q5" value="gottfried"> Gottfried</label><br>
+              <label><input type="radio" name="q5" value="napier"> Napier</label><br>
+              <label><input type="radio" name="q5" value="joseph"> Joseph</label><br>
+            </div>
+          <!-- Navigation Buttons -->
+          <div class="quiz-navigation">
+            <button class="quiz-prev" id="quiz-prev-btn">Previous Question</button>
+            <button class="quiz-next" id="quiz-next-btn">Next Question</button>
+            <button class="quiz-submit" id="quiz-submit-btn">Submit Quiz</button>
+          </div>
+        </div>
+        
+    </section>
+
+
+    <section id="outline-3" class="lesson-section">
+      <h2>Electronic Counting Devices</h2>
+      <p>With the advent of technology, came the evolution of Electric. counting Devices was then created using electric as the power source.
+        <br>An electronic counting device is a device that uses electronic circuitry to count events or items. This broad category encompasses a wide range of devices with varying levels of complexity and applications. Here's a breakdown of key aspects:
+        <br>There are several electronic counting devices which include:</p>
+      </p>
+
+      <ul>
+          <li>Herman Hollerith&rsquo;s Punchcards</li>
+          <li>John Von Neumann&rsquo;s Machine</li>
+          <li>Modern Machine</li>
+      </ul>
+      
+      <!-- Four Content Blocks for Early Counting Devices -->
+      <div class="content-block" data-content="1">
+        <h3>Herman Hollerith&rsquo;s Punchcards</h3>
+        <p>Herman Hollerith invented machine which worked on electricity for the first time in 1889. One machine was used for recording data and the other was used for doing calculations of the recorded data. His machine was capable of reading both numbers and letters.
+          <br>Hollerith invented the punch card, a card with holes punched in it to represent data. The punch card was used to input data into the machine, which then processed the data and produced results.</p>
+        </p>
+        <img src="assests/Punchcard.jpg" alt="Punch card">
+      </div>
+      <div class="content-block" data-content="2">
+        <h3>Stones</h3>
+        <p>As a result of the stress of using fngers to count numbers of animals larger than 20. <br>The early  man learnt how to use stones and pebbles for counting  and also to count his wealth</p>
+        <img src="assests/srones.jpg" alt="Stones">
+      </div>
+      <div class="content-block" data-content="3">
+        <h3>Sticks</h3>
+        <p>Man later used sticks to count and perform addition and subtraction. <br> This technique also requires physical effort and a lot of stress in terms of performing larger calculation.</p>
+        <img src="assests/sticks.jpg" alt="Sticks">
+      </div>
+      <div class="content-block" data-content="4">
+        <h3>Cowries</h3>
+        <p>Cowries were also used to count and perform simple arithmetic in ancient time. <br> This technique also took too much energy, especially when large numbers were involved.</p>
+        <img src="assests/cowries.jpg" alt="cowries">
+      </div>
+      
+      <div class="quiz-section" id="quiz-outline-1">
+          <h3>Quiz: Early Counting Devices</h3>
+          <!-- Quiz Question Containers -->
+          <div class="quiz-question" id="quiz-question-1">
+            <h5>Question 1</h5>
+            <p><strong>All of the following are ancient counting devices except ________</strong></p>
+            <label><input type="radio" name="q1" value="finger"> Finger</label><br>
+            <label><input type="radio" name="q1" value="stone"> Stones</label><br>
+            <label><input type="radio" name="q1" value="stick"> Sticks</label><br>
+            <label><input type="radio" name="q1" value="paper"> Paper</label><br>
+          </div>
+          <div class="quiz-question hidden" id="quiz-question-2">
+            <h5>Question 2</h5>
+            <p><strong>The simple ancient device which helps in carrying out simple arithmetic is ______</strong></p>
+            <label><input type="radio" name="q2" value="fingers"> Fingers</label><br>
+            <label><input type="radio" name="q2" value="head"> Head</label><br>
+            <label><input type="radio" name="q2" value="legs"> Legs</label><br>
+            <label><input type="radio" name="q2" value="pebble"> Pebbles</label><br>
+          </div>
+          <div class="quiz-question hidden" id="quiz-question-3">
+              <h5>Question 3</h5>
+              <p><strong>Because of the inability of fingers to count large numbers, the early man used _______</strong></p>
+              <label><input type="radio" name="q3" value="fingers"> Fingers</label><br>
+              <label><input type="radio" name="q3" value="stones"> Stones</label><br>
+              <label><input type="radio" name="q3" value="pebbles"> Pebbles</label><br>
+              <label><input type="radio" name="quiz-question-3" value="lights"> Lights</label><br>
+            </div>
+          <!-- Navigation Buttons -->
+          <div class="quiz-navigation">
+            <button class="quiz-prev" id="quiz-prev-btn">Previous Question</button>
+            <button class="quiz-next" id="quiz-next-btn">Next Question</button>
+            <button class="quiz-submit" id="quiz-submit-btn">Submit Quiz</button>
+          </div>
+        </div>
+        
+    </section>
+    </main>
+
+    <!-- Modal Popup for Quiz Feedback -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <p id="modal-message"></p>
+        <button id="modal-close-btn">OK</button>
+      </div>
+    </div>
+
+    <!-- Lesson Footer -->
+    <footer class="lesson-footer">
+      <button class="nav-btn" id="mark-complete-btn">Mark Lesson as Complete</button>
+      <div class="prev-next">
+        <button class="nav-btn" id="prev-lesson-btn">&larr; Previous</button>
+        <button class="nav-btn" id="next-lesson-btn">Next &rarr;</button>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
